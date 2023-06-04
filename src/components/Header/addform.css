@@ -1,0 +1,86 @@
+.headerx {
+    position: relative;
+    transition: all 0.5s ease;
+  }
+
+  .addDetails {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: 400px;
+    height: 530px;
+    background-color: rgba(255,255,255,0.15);
+    padding: 50px 35px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(8,7,16,0.6);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .show-content {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .addDetails h3{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    margin-bottom: 20px;
+  }
+  
+  .addDetails input{
+    width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #FFF;
+	letter-spacing: 1px;
+	margin-bottom: 18px;
+	border: none;
+	border-bottom: 1px solid #FFF;
+	outline: none;
+	background: transparent;
+  }
+  ::placeholder {
+    color: rgba(193, 193, 193, 0.83);
+  }
+
+  /* .saveButton, .closeButton {
+    margin-top: 50px;
+    color:#080710;
+    width: 100%;
+    background-color: white;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+  .saveButton{
+    margin-top: 30px;
+  }
+  .saveButton, .closeButton {
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    color: #12162dda;
+    background: linear-gradient(to right, #f2709c, #ff9472);
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 4;
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+  button:hover{
+    background: #ffffff;
+  }
