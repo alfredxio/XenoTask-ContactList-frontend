@@ -47,7 +47,7 @@ const Header = ({ addContact, emailx, logout, userx, setisNewUser }) => {
     setToken(getToken);
     await axios
     .post(`${site}/contacts/${emailx}`, {
-      image_url: contact.image_url,
+      image_url: contact.image_url===''?'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png':contact.image_url,
       name: contact.name,
       email: contact.email,
       phone: contact.phone,
