@@ -57,7 +57,7 @@ const Contacts = ({users, emailx, isNewUser, setContacts}) => {
     
     return (
         <>
-         {(isNewUser || contactList.length === 0)?(<>
+         {(isNewUser || users.length === 0)?(<>
           <div className="newUser">No Contacts availble. Create New Account</div>
         </>):<></>}
         <div className="card-container">
