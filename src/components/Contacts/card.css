@@ -5,11 +5,13 @@
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.3);
+  transition: all 0.3s ease;
 }
 
 .wrapper {
   position: relative;
   width: 280px;
+  height: 380px;
   padding: 20px;
   border-radius: 20px;
   display: flex;
@@ -17,6 +19,12 @@
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  margin-bottom: 23px;
+}
+
+.wrapper:hover{
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.5);
+  transform: scale(1.05);
 }
 
 .wrapper .img-area {
@@ -55,20 +63,20 @@
   align-items: center;
   text-align: center;
 }
+
 .wrapper .cardButtons {
   margin-bottom: 10px;
   margin-top: 20px;
 }
 .cardButtons button {
   position: relative;
-  height: 40px;
-  width: 40px;
   margin: 0 5px;
   display: inline-flex;
   text-decoration: none;
   border-radius: 50%;
   font-size: 30px;
 }
+
 .cardButtons button:hover::before,
 .wrapper .icon:hover::before,
 .buttons button:hover:before {
@@ -78,16 +86,13 @@
   left: 0;
   bottom: 0;
   right: 0;
+  border-radius: 50%;
   background: #ecf0f3;
   box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
 }
-.cardButtons button:hover:before {
-  z-index: -1;
-  border-radius: 5px;
-}
 
-.buttons button:hover {
-  color: black;
+.cardButtons button:hover .icon{
+  color: #000000;
 }
 .cardButtons button .icon {
   position: relative;
@@ -98,18 +103,6 @@
   font-size: 50px;
   line-height: 35px;
 }
-.cardButtons a:nth-last-child(1) i {
-  color: #13d151;
-}
-.cardButtons a:nth-last-child(2) i {
-  color: #e6ba12;
-}
-.cardButtons a:nth-last-child(3) i {
-  color: #1da9e9;
-}
-.cardButtons a:nth-last-child(4) i {
-  color: #f23400;
-}
 
 .wrapper .cardButtons {
   display: flex;
@@ -118,39 +111,30 @@
 }
 
 .cardButtons button {
-  position: relative;
-  width: 100%;
-  border: none;
-  outline: none;
-  padding: 12px 0;
-  color: #12162dda;
-  background: linear-gradient(45deg, #ffc837, #ff8e00);
-  font-size: 17px;
-  font-weight: 400;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 4;
-  bottom: 0;
-}
-.buttons button:first-child {
-  margin-right: 10px;
-}
-.buttons button:last-child {
-  margin-left: 10px;
+  background-color: rgba(181, 177, 177, 0.13);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.3);
+  height: 50px;
+  width: 50px;
+  padding: 8px 12px;
 }
 
 .cardTitleInput{
-  width: 80%!important;
+  width:100%!important;
+  margin-left:23px!important;
 }
+
 .infoValueInput, .cardTitleInput{
+  margin-left:23px;
   width: 100%;
-	padding: 10px 0;
+	padding-left: 10px;
 	font-size: 16px;
 	color: #FFF;
 	letter-spacing: 1px;
 	margin-bottom: 22px;
 	border: none;
-	border-bottom: 1px solid #FFF;
 	outline: none;
 	background: transparent;
   font-size: 15px;

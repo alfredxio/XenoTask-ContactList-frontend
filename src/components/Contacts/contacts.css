@@ -1,10 +1,13 @@
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    gap: 30px;
     transition: all 0.5s ease;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 80px;
   }
+  
   
   .newUser{
     display: flex;
@@ -16,3 +19,47 @@
     font-weight: 300;
     font-size: 20px;
   }
+
+  .sort-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 100px;
+    margin-bottom: 30px;
+  }
+
+  .sort-container select,input{
+    background-color: rgba(181, 177, 177, 0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.3);
+    height: 40px;
+    width: auto;
+    padding: 8px 12px;
+    margin-right: 20px;
+  }
+
+ option{
+  color:black;
+ }
+  
+/* 
+  .sort-container select,input{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #000000;
+    background-color: transparent;
+    width:120px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(228, 222, 222, 0.5); /* Adjust the alpha value to control the transparency */
+  /* } */
+/*   
+  .sort-container input{
+    margin-left: 20px;
+    width: 220px!important;
+    padding-left:10px;
+  }  */

@@ -82,7 +82,7 @@ const Header = ({ addContact, emailx, logout, userx, setisNewUser }) => {
           <h1>ContactX</h1>
         </div>
         <div className="right">
-          <span className="greet">Hi, {userx}</span>
+          <span className="greet">Hello!  <b>{userx}</b></span>
           <button className="addButton" onClick={handleAddClick}>
             <FaUserPlus /> Add Contact
           </button>

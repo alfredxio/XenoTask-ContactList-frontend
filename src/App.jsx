@@ -8,11 +8,12 @@ import axios from 'axios';
 import site from './keys/Site'
 
 function App() {
-  console.log("meaw"+site);
-  const {loginWithPopup,loginWithRedirect,logout,user,isAuthenticated,getAccessTokenSilently} = useAuth0();
+
+  const {loginWithRedirect,logout,user,isAuthenticated,getAccessTokenSilently} = useAuth0();
 
   const [contacts, setContacts] = useState([]);
   const [isNewUser, setisNewUser] = useState(false);
+  const [msg, setMsg] = useState('Loading...');
 
   const fetchContacts = async () => {
     try {
@@ -25,6 +26,7 @@ function App() {
     } catch (error) {
       if (error.response && error.response.status === 404) {
         setisNewUser(true);
+        setMsg('No contacts found! Add New.');
       }
       console.log(error);
     }
@@ -46,7 +48,7 @@ function App() {
       {!isAuthenticated?(<Home login={loginWithRedirect}/>):(<>
       
         <Header addContact={addContact} emailx={user.email} logout={logout} userx={user.name} setisNewUser={setisNewUser}/>
-        <Contacts users={contacts} emailx={user.email} isNewUser={isNewUser} setContacts={setContacts}/>
+        <Contacts users={contacts} emailx={user.email} isNewUser={isNewUser} setContacts={setContacts} msg={msg}/>
         </>
       )}
     </>

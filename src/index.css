@@ -10,7 +10,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(assets/bg2.jpg);
   background-size: cover;
   background-position: center;
