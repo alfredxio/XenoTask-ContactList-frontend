@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./card.css";
 import { MdEdit, MdDelete, MdSave, MdCheck, MdClose } from "react-icons/md";
 import site from '../../keys/Site'

@@ -53,7 +53,6 @@ const Contacts = ({users, emailx, isNewUser, setContacts}) => {
             console.log(error);
         }
     };
-
     
     return (
         <>
