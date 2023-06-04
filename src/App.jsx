@@ -37,7 +37,6 @@ function App() {
   }, [isAuthenticated]);
 
   const addContact = (newContact) => {
-    console.log(newContact);
     setContacts((prevUsers) => [...prevUsers, newContact]);
   };
   
@@ -47,7 +46,7 @@ function App() {
       {!isAuthenticated?(<Home login={loginWithRedirect}/>):(<>
       
         <Header addContact={addContact} emailx={user.email} logout={logout} userx={user.name} setisNewUser={setisNewUser}/>
-        <Contacts users={contacts} emailx={user.email} isNewUser={isNewUser}/>
+        <Contacts users={contacts} emailx={user.email} isNewUser={isNewUser} setContacts={setContacts}/>
         </>
       )}
     </>

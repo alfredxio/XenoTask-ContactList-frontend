@@ -11,6 +11,13 @@ const Card = React.memo(({ user, onEdit, onRemove }) => {
   const [image_url, setImage] = useState(user.image_url);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
+  useEffect(() => {
+    setName(user.name)
+    setEmail(user.email)
+    setPhone(user.phone)
+    setImage(user.image_url)
+  }, [user]);
+
   const handleEditClick = () => {
     setIsEditing(true);
     setShowConfirmation(false);

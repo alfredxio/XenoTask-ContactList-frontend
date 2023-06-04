@@ -5,13 +5,14 @@ import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react'
 import site from '../../keys/Site'
 
-const Contacts = ({users,emailx,isNewUser}) => {
-    const [contactList, setContactList] = useState(users);
+const Contacts = ({users, emailx, isNewUser, setContacts}) => {
+    //const [contactList, setContactList] = useState(users);
     const { getAccessTokenSilently } = useAuth0();
     const [token, setToken] = useState("");
 
     useEffect(() => {
-        setContactList(users);
+        //setContactList(users);
+        setContacts(users);
         getAccessTokenSilently().then((t) => setToken(t));
     }, [users]);
     
@@ -21,10 +22,12 @@ const Contacts = ({users,emailx,isNewUser}) => {
                 Authorization: `Bearer ${token}`,
             },
         }).then((response) => {
-            const updatedList = contactList.map((user) =>
-                user._id === updatedUser._id ? updatedUser : user
-            );
-            setContactList(updatedList);
+            // const updatedList = contactList.map((user) =>
+            //     user._id === updatedUser._id ? updatedUser : user
+            // );
+            // setContactList(updatedList);
+            const newContacts = response.data.contacts;
+            setContacts(newContacts);
         }).catch((error) => {
             console.log(error);
         });
@@ -38,9 +41,11 @@ const Contacts = ({users,emailx,isNewUser}) => {
                     Authorization: `Bearer ${token}`,
                 },
             }).then((response) => {
-                const updatedList = [...contactList];
-                updatedList.splice(id, 1);
-                setContactList(updatedList);
+                // const updatedList = [...contactList];
+                // updatedList.splice(id, 1);
+                // setContactList(updatedList);
+                const newContacts = response.data.contacts;
+                setContacts(newContacts);
             }).catch((error) => {
                 console.log(error);
             });
@@ -56,12 +61,13 @@ const Contacts = ({users,emailx,isNewUser}) => {
           <div className="newUser">No Contacts availble. Create New Account</div>
         </>):<></>}
         <div className="card-container">
-            {contactList.map((user, index) => (
+            {/* {contactList.map((user, index) => ( */}
+            {users && users.map((contact, index) => (
             <Card
                 key={index}
-                user={user}
+                user={contact}
                 onEdit={handleEdit}
-                onRemove={() => handleRemove(user._id)}
+                onRemove={() => handleRemove(contact._id)}
             />
             ))}
         </div>
