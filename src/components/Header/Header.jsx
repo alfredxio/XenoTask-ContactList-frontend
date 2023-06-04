@@ -4,6 +4,7 @@ import "./addform.css"
 import axios from "axios";
 import { FaUserPlus } from 'react-icons/fa';
 import { useAuth0 } from '@auth0/auth0-react'
+import site from '../../keys/Site'
 
 const Header = ({ addContact, emailx, logout, userx, setisNewUser }) => {
   const { getAccessTokenSilently } = useAuth0();
@@ -45,7 +46,7 @@ const Header = ({ addContact, emailx, logout, userx, setisNewUser }) => {
     const getToken = await getAccessTokenSilently();
     setToken(getToken);
     await axios
-    .post(`http://localhost:3000/contacts/${emailx}`, {
+    .post(`${site}/contacts/${emailx}`, {
       image_url: contact.image_url,
       name: contact.name,
       email: contact.email,

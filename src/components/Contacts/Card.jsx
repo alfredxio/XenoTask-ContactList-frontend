@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./card.css";
 import { MdEdit, MdDelete, MdSave, MdCheck, MdClose } from "react-icons/md";
+import site from '../../keys/Site'
 
 const Card = React.memo(({ user, onEdit, onRemove }) => {
   const [isEditing, setIsEditing] = useState(false);

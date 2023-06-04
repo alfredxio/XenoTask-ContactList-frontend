@@ -3,6 +3,7 @@ import './contacts.css';
 import Card from './Card';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react'
+import site from '../../keys/Site'
 
 const Contacts = ({users,emailx,isNewUser}) => {
     const [contactList, setContactList] = useState(users);
@@ -15,7 +16,7 @@ const Contacts = ({users,emailx,isNewUser}) => {
     }, [users]);
     
     const handleEdit = (updatedUser) => {
-        axios.put(`http://localhost:3000/contacts/${emailx}/${updatedUser._id}`, updatedUser, {
+        axios.put(`${site}/contacts/${emailx}/${updatedUser._id}`, updatedUser, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -32,7 +33,7 @@ const Contacts = ({users,emailx,isNewUser}) => {
     const handleRemove = async(id) => {
         console.log(id);
         try {
-            const response = axios.delete(`http://localhost:3000/contacts/${emailx}/${id}`, {
+            const response = axios.delete(`${site}/contacts/${emailx}/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

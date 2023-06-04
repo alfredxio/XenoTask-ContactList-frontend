@@ -5,43 +5,18 @@ import Contacts from './components/Contacts/Contacts'
 import Home from './components/Home/Home'
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from 'axios';
-
+import site from './keys/Site'
 
 function App() {
+  console.log("meaw"+site);
   const {loginWithPopup,loginWithRedirect,logout,user,isAuthenticated,getAccessTokenSilently} = useAuth0();
-
-  function callApi(){
-    axios.get('http://localhost:4000/api/public')
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }
-
-  async function callProtectedApi() {
-    try {
-      const domain="dev-a88lagl5jzszgnna.us.auth0.com";
-      const token = await getAccessTokenSilently();
-
-      const response = await axios.get('http://localhost:3000/api/private', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   const [contacts, setContacts] = useState([]);
   const [isNewUser, setisNewUser] = useState(false);
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/contacts/${user.email}`, {
+      const response = await axios.get(`${site}/contacts/${user.email}`, {
         headers: {
           Authorization: `Bearer ${await getAccessTokenSilently()}`,
         },
