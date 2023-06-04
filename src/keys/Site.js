@@ -1,3 +1,3 @@
-const site ='http://localhost:3000';
+const site ='https://xenotask-contactlist-backend-production.up.railway.app';
 export default site;
 // 'https://xenotask-contactlist-backend-production.up.railway.app';
