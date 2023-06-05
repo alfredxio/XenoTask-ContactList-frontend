@@ -8,18 +8,31 @@
   flex-wrap: wrap;
   padding: 10px;
 }
-.logo {
-  margin-right: 20px;
-  margin-left: 5px;
-  font-size: 15px;
+
+@media (max-width: 740px) {
+  .header {
+    justify-content: center;
+  }
+  .usergreet{
+    margin-top: 8px;
+  }
+  .buttongreet{
+    margin-top: 8px;
+  }
+  .greet{
+    margin-right: 0px;
+  }
 }
-.logo h1 {
-  margin: 0;
+
+.logo {
+  /* margin-right: 20px; */
+  /* margin-left: 5px; */
+  font-size: 15px;
+  align-items: center;
 }
 
 .greet {
-  margin-right: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   font-weight: 300;
@@ -34,24 +47,12 @@
   height: 40px;
   width: auto;
   padding: 8px 12px;
-  margin-right: 20px;
 }
-/* .addButton {
-  height: 40px;
-  width: auto;
-  padding: 8px 12px;
-  background: linear-gradient(to right, #6ab8e3, #96fbc4);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 10px;
-  width: 180px;
-  font-size: 20px;
-  margin-right: 20px;
-  margin-bottom: 10px;
-} */
+
+.buttongreet{
+  display: flex;
+  gap: 10px;
+}
 
 .logoutButton {
   background: linear-gradient(to right, #f2709c, #ff9472);
@@ -66,4 +67,9 @@
 
 .right {
   white-space: nowrap;
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

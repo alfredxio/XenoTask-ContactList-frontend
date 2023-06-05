@@ -11,6 +11,7 @@
 .wrapper {
   position: relative;
   width: 280px;
+  min-width: 280px;
   height: 380px;
   padding: 20px;
   border-radius: 20px;
@@ -19,10 +20,14 @@
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  margin-bottom: 23px;
+  margin-bottom: 20px;
 }
 
-.wrapper:hover{
+.inputfirst {
+  margin-top: 25px;
+}
+
+.wrapper:hover {
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.5);
   transform: scale(1.05);
 }
@@ -65,13 +70,14 @@
 }
 
 .wrapper .cardButtons {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   margin-top: 20px;
+  gap: 15px;
 }
 .cardButtons button {
   position: relative;
-  margin: 0 5px;
   display: inline-flex;
+
   text-decoration: none;
   border-radius: 50%;
   font-size: 30px;
@@ -91,7 +97,7 @@
   box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
 }
 
-.cardButtons button:hover .icon{
+.cardButtons button:hover .icon {
   color: #000000;
 }
 .cardButtons button .icon {
@@ -121,21 +127,45 @@
   padding: 8px 12px;
 }
 
-.cardTitleInput{
-  width:100%!important;
-  margin-left:23px!important;
+.infoValueInput,
+.cardTitleInput {
+  margin-left: 23px;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
 }
 
-.infoValueInput, .cardTitleInput{
-  margin-left:23px;
-  width: 100%;
-	padding-left: 10px;
-	font-size: 16px;
-	color: #FFF;
-	letter-spacing: 1px;
-	margin-bottom: 22px;
-	border: none;
-	outline: none;
-	background: transparent;
-  font-size: 15px;
+.editButton {
+  margin-top: 0;
+}
+
+.add {
+  font-size: 100px;
+  color: #ecf0f37f;
+  transition: all 0.3s ease;
+}
+
+.msg {
+  font-size: 20px;
+  color: #ecf0f37f;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+.wrapper:hover .add {
+  color: #ecf0f3;
+}
+.wrapper:hover .msg {
+  color: #ecf0f3;
+}
+
+.addcardw{
+  cursor: pointer;
 }

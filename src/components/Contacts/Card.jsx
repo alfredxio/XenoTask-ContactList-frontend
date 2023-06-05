@@ -72,7 +72,7 @@ const Card = React.memo(({ user, onEdit, onRemove }) => {
       {isEditing ? (
             <input
               type="text"
-              className="cardTitleInput"
+              className="cardTitleInput inputfirst"
               value={image_url}
               onChange={(e) => handleChange(e, setImage)}
             />
