@@ -110,7 +110,7 @@ const Contacts = ({ users, emailx, isNewUser, setContacts, msg, setMsg, setIsAdd
           ) : (
             <>
               <div className="card-container blanks">
-                <AddCard msg={'No Contacts found\nAdd New'} />
+                <AddCard msg={'No Contacts found.'} />
               </div>
             </>
           )}

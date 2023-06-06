@@ -7,6 +7,7 @@ const AddCard = React.memo(({msg}) => {
     <>
     <div className="wrapper addcardw">
         <div className="msg">{msg}</div>
+        {msg==='No Contacts found.'?<div className="msg">Add New</div>:null}
         <FaPlusCircle className="add"/>
     </div>
     </>
